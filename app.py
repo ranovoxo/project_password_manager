@@ -5,12 +5,8 @@ def generate_password():
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save_to_file():
     f = open("passwords_file.txt", "a")
-    website = f"Website: {website_input.get()}, "
-    email_username = f"Email/Username: {email_input.get()}, "
-    password = f"Password: {password_input.get()}"
-    data = website + email_username + password
+    data = website_input.get() + " | " + email_input.get() + " | " + password_input.get() + "\n"
     f.write(data)
-
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Password Manager")
