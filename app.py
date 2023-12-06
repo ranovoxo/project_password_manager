@@ -3,6 +3,13 @@ from tkinter import *
 def generate_password():
     pass
 # ---------------------------- SAVE PASSWORD ------------------------------- #
+def save_to_file():
+    f = open("passwords_file.txt", "a")
+    website = f"Website: {website_input.get()}, "
+    email_username = f"Email/Username: {email_input.get()}, "
+    password = f"Password: {password_input.get()}"
+    data = website + email_username + password
+    f.write(data)
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
@@ -37,8 +44,9 @@ password_button.grid(column=2, row=4)
 password_button.config(command=generate_password)
 
 # submit button field
-submit_info_button = Button(text="Add", width=36)
+submit_info_button = Button(text="Add", width=34)
 submit_info_button.grid(column=1, row=5, columnspan=2)
+submit_info_button.config(command=save_to_file)
 
 
 
